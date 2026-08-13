@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<meta name="google-site-verification" content="L5wS-iel4duogU2GJo13T92eGm7OPaYW9MQPUwoK6uc" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BENJI3000 — Portfolio</title>
+  <meta name="description" content="BENJI3000 — interactive sites, small experiments, and fun projects. View demos, source code, and contact information." />
+  <link rel="canonical" href="https://benji3000.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="BENJI3000" />
+  <meta property="og:title" content="BENJI3000 — Portfolio" />
+  <meta property="og:description" content="Interactive sites, small experiments, and fun projects by BENJI3000." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://benji3000.com/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BENJI3000 — Portfolio" />
+  <meta name="twitter:description" content="Interactive sites, small experiments, and fun projects by BENJI3000." />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "BENJI3000",
+    "url": "https://benji3000.com",
+    "sameAs": [
+      "https://github.com/benji3000"
+    ],
+    "jobTitle": "Web tinkerer"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">BENJI3000</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero reveal">
+      <div class="hero-inner">
+        <h1>Hi, I'm <span class="name">BENJI3000</span></h1>
+        <p class="subtitle">I build <span id="typewriter"></span></p>
+        <div class="hero-cta">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about reveal">
+      <div class="container">
+        <h2>About</h2>
+        <p>your number one web</p>
+      </div>
+    </section>
+
+    <section id="projects" class="projects reveal">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Project One</h3>
+            <p>Short description of project one. Link to demo or repo if available.</p>
+            <p class="tags">HTML · CSS · JS</p>
+            <a class="card-link" href="https://github.com/benji3000/fantacy3" target="_blank" rel="noopener">View</a>
+          </article>
+
+          <article class="card">
+            <h3>Project Two</h3>
+            <p>Short description of project two. Replace with your work.</p>
+            <p class="tags">Vanilla JS</p>
+            <a class="card-link" href="https://github.com/benji3000/fantacy3" target="_blank" rel="noopener">View</a>
+          </article>
+
+          <article class="card">
+            <h3>Project Three</h3>
+            <p>Short description of project three.</p>
+            <p class="tags">CSS · Animation</p>
+            <a class="card-link" href="#">View</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, send an email or use the form below.</p>
+        <form class="contact-form" action="mailto:your.email@example.com" method="GET" enctype="text/plain">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Say hello..." required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn">Send</button>
+            <a class="btn ghost" href="mailto:your.email@example.com">Or email me</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> BENJI3000 — Built for fun</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

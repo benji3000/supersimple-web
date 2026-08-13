@@ -1,0 +1,94 @@
+/* Dark themed portfolio — Arial font */
+:root{
+  --bg:#071019; /* deep navy */
+  --surface:#0f1720;
+  --muted:#98a0aa;
+  --accent:#6be3b0;
+  --text:#e6eef3;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:transparent; /* canvas will provide animated background */
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* Full-screen canvas background */
+#bg-canvas{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+/* Subtle animated gradient layer behind content (under canvas) */
+body::before{
+  content: '';
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background: linear-gradient(120deg, rgba(107,227,176,0.06), rgba(107,155,227,0.04), rgba(183,123,255,0.04));
+  background-size: 200% 200%;
+  opacity:0.9;
+  pointer-events:none;
+  animation:gradShift 14s ease infinite;
+}
+
+@keyframes gradShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.container{max-width:1000px;margin:0 auto;padding:2rem}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(7,16,25,0.45);backdrop-filter:blur(6px);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1.25rem}
+.brand{font-weight:700}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav-links a{text-decoration:none;color:var(--muted);padding:0.25rem 0.5rem;border-radius:6px}
+.nav-links a:hover{color:var(--text);background:rgba(107,227,176,0.06)}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:1.2rem}
+
+.hero{min-height:60vh;display:flex;align-items:center}
+.hero-inner{padding:4rem 1rem;text-align:center}
+.hero h1{font-size:2.2rem;margin:0}
+.subtitle{color:var(--muted);margin-top:0.5rem}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;background:var(--accent);color:#04201a;text-decoration:none;font-weight:600;margin:0.6rem}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
+
+.about, .projects, .contact{padding:4rem 0}
+.projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,10,0.6);transition:transform .28s ease, box-shadow .28s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(2,6,10,0.7)}
+.card h3{margin-top:0}
+.tags{color:var(--muted);font-size:0.9rem}
+.card-link{text-decoration:none;color:var(--accent);font-weight:600}
+
+.contact-form{display:grid;gap:0.8rem;max-width:600px}
+.contact-form label{display:block}
+.contact-form input, .contact-form textarea{width:100%;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text)}
+.form-actions{display:flex;gap:0.6rem;align-items:center}
+
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+.reveal.active{opacity:1;transform:none}
+
+/* Small screens */
+@media (max-width:720px){
+  .nav-links{display:none;position:absolute;right:1rem;top:56px;background:var(--surface);padding:0.5rem;border-radius:8px;flex-direction:column}
+  .nav-toggle{display:block}
+  .hero-inner{padding:3rem 1rem}
+}
